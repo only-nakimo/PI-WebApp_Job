@@ -9,6 +9,8 @@ import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
+
 @Service
 @Transactional
 
@@ -24,6 +26,7 @@ public class UserServiceImplementation implements UserService {
 
     @Override
     public User addNewUser(User user) {
+        user.setUserId(UUID.randomUUID().toString());
         return userRepository.save(user);
     }
 
