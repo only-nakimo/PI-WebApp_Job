@@ -16,7 +16,7 @@ import lombok.Setter;
 public class ProfilEntreprise {
     @Id
     private String refEntreprise;
-    @NotNull
+    @NotNull(message = "Ne doit pas être vide")
     private String designation;
     @NotNull
     private String siege;
