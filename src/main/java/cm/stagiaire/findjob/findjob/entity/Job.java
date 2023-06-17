@@ -7,6 +7,10 @@ import lombok.*;
 import org.hibernate.id.factory.spi.GenerationTypeStrategy;
 import org.springframework.boot.autoconfigure.web.WebProperties;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -14,6 +18,7 @@ import org.springframework.boot.autoconfigure.web.WebProperties;
 @AllArgsConstructor
 @Table(name = "TABLE_JOB")
 public class Job {
+
     @Id
     private String ref;
     @GeneratedValue(strategy = GenerationType.AUTO)

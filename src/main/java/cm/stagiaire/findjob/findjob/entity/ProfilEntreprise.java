@@ -7,6 +7,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -14,6 +18,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @Table(name = "TABLE_PROFIL_ENTREPRISE")
 public class ProfilEntreprise {
+    @OneToMany
+    private Collection<Job> jobs;
+
     @Id
     private String refEntreprise;
     @NotNull(message = "Ne doit pas être vide")
